@@ -1,0 +1,1 @@
+console=serial0,115200 console=tty1 root=/dev/ram0 initrd=0x03000000 androidboot.hardware=rpi5 androidboot.selinux=permissive androidboot.boot_devices=platform/axi/1000120000.pcie/1f00000000.pcie/1f00000000:00.0/1f00000000:00.0:0
