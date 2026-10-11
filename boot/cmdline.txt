@@ -1,1 +1,0 @@
-console=tty0 console=ttyAMA10,115200 no_console_suspend root=/dev/ram0 rootwait androidboot.hardware=rpi5 androidboot.selinux=permissive androidboot.hypervisor.vm.supported=1 androidboot.console=tty0 initcall_debug printk.devkmsg=on psi=1
