@@ -1,12 +1,20 @@
-arm_64bit=1
-enable_uart=1
-uart_2ndstage=1
+os_prefix=
+overlay_prefix=overlays/
 
-dtoverlay=vc4-kms-v3d
-dtoverlay=rp1
-max_framebuffers=2
-
-kernel=Image.gz
+# Kernel & Initramfs Config
+kernel=kernel8.img
 initramfs ramdisk.img followkernel
 
-dtoverlay=dwc2,dr_mode=host
+# Boot Overlays & Settings
+arm_64bit=1
+enable_uart=1
+uart_250mhz=1
+dtoverlay=android-sdcard
+
+# Graphics & Display
+dtoverlay=vc4-kms-v3d
+max_framebuffers=2
+disable_fw_kms_setup=1
+
+# Memory & Performance
+gpu_mem=128
