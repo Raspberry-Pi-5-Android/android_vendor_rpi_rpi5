@@ -1,0 +1,87 @@
+// Mesa prebuilts for Raspberry Pi 5: Gallium V3D/VC4 (OpenGL ES) and V3DV (Vulkan).
+// The binaries are produced by build_mesa.sh and copied here by package_mesa.sh;
+// versions and checksums are recorded in BUILD_INFO and SHA256SUMS (see README.md).
+
+package {
+    default_applicable_licenses: ["vendor_rpi_rpi5_mesa_license"],
+}
+
+license {
+    name: "vendor_rpi_rpi5_mesa_license",
+    visibility: [":__subpackages__"],
+    license_kinds: ["SPDX-license-identifier-MIT"],
+    license_text: [
+        "licenses/MESA_LICENSE.rst",
+        "licenses/EXPAT_COPYING",
+        "licenses/LIBDRM_NOTICE",
+    ],
+}
+
+cc_defaults {
+    name: "rpi5_mesa_prebuilt_defaults",
+    vendor: true,
+    compile_multilib: "64",
+    check_elf_files: true,
+    strip: {
+        none: true,
+    },
+}
+
+// OpenGL ES: installed in /vendor/lib64/egl, which is labeled same_process_hal_file
+// and is on the search path of the sphal linker namespace.
+cc_prebuilt_library_shared {
+    name: "libgallium_dri",
+    defaults: ["rpi5_mesa_prebuilt_defaults"],
+    relative_install_path: "egl",
+    srcs: ["prebuilt/arm64/egl/libgallium_dri.so"],
+    shared_libs: [
+        "liblog",
+        "libsync",
+        "libz",
+    ],
+}
+
+cc_prebuilt_library_shared {
+    name: "libEGL_mesa",
+    defaults: ["rpi5_mesa_prebuilt_defaults"],
+    relative_install_path: "egl",
+    srcs: ["prebuilt/arm64/egl/libEGL_mesa.so"],
+    shared_libs: [
+        "libgallium_dri",
+        "libhardware",
+        "liblog",
+        "libnativewindow",
+        "libsync",
+    ],
+}
+
+cc_prebuilt_library_shared {
+    name: "libGLESv1_CM_mesa",
+    defaults: ["rpi5_mesa_prebuilt_defaults"],
+    relative_install_path: "egl",
+    srcs: ["prebuilt/arm64/egl/libGLESv1_CM_mesa.so"],
+    shared_libs: ["libgallium_dri"],
+}
+
+cc_prebuilt_library_shared {
+    name: "libGLESv2_mesa",
+    defaults: ["rpi5_mesa_prebuilt_defaults"],
+    relative_install_path: "egl",
+    srcs: ["prebuilt/arm64/egl/libGLESv2_mesa.so"],
+    shared_libs: ["libgallium_dri"],
+}
+
+// Vulkan HAL module, loaded by name for ro.hardware.vulkan=broadcom.
+cc_prebuilt_library_shared {
+    name: "vulkan.broadcom",
+    defaults: ["rpi5_mesa_prebuilt_defaults"],
+    relative_install_path: "hw",
+    srcs: ["prebuilt/arm64/hw/vulkan.broadcom.so"],
+    shared_libs: [
+        "libhardware",
+        "liblog",
+        "libnativewindow",
+        "libsync",
+        "libz",
+    ],
+}

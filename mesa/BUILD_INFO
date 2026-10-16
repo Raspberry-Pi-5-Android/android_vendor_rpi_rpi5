@@ -1,0 +1,15 @@
+mesa_tag=mesa-26.2.5
+mesa_commit=ddaf85e353442d9d7f192fdcf1823e652e3f2ee3
+ndk_revision=30.0.16248370
+api_level=35
+clang=Android (16134705, +pgo, +bolt, +lto, +mlgo, based on r574158c) clang version 21.0.0 (https://android.googlesource.com/toolchain/llvm-project 9f872551d3c681d06fd303b36f16ed5c274735eb)
+meson=1.7.0
+ninja=1.11.1
+subproject=expat expat-2.5.0 source_hash=ef2420f0232c087801abf705e89ae65f6257df6b7931d37846a193ef2e8cdcbe
+subproject=libdrm libdrm-2.4.133 source_hash=fc68f9d0ba2ea63c9432a299e14fea09fad7a8a66e8039fcd7802ca59f77b4f5
+5101c611daa777df65fc0842610641012c7d05e4c4296c8770817099299c614f  libEGL_mesa.so
+cb2273fb2636b5621f1726d547bd7722823dca79796c67ef4c5f444237a06d26  libGLESv1_CM_mesa.so
+ac41be2220f19c09d8dfac7577e9af7705a98b4fe3ff15994af82b85078f043c  libGLESv2_mesa.so
+79a2420b75f35dd944a16f6a5145c7d0808b0134d4efd60c4277847e44bdd9d0  libgallium_dri.so
+1bf13e95da6d961d9a1de8a6763d6957aeb4e9611f018d902d65885d815d28b6  libvulkan_broadcom.so
+patchelf=patchelf 0.18.0
