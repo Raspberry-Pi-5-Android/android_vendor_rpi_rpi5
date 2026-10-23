@@ -1,0 +1,14 @@
+wifi: https://github.com/RPi-Distro/firmware-nonfree.git trixie 3bab0f823f5b53150b76aab77093adef6655b920
+bluetooth: https://github.com/RPi-Distro/bluez-firmware.git pios/trixie cdf61dc691a49ff01a124752bd04194907f0f9cd
+files:
+  brcm/brcmfmac43455-sdio.bin <- firmware-nonfree/debian/added-firmware/cypress/cyfmac43455-sdio-standard.bin
+  brcm/brcmfmac43455-sdio.clm_blob <- firmware-nonfree/debian/added-firmware/cypress/cyfmac43455-sdio.clm_blob
+  brcm/brcmfmac43455-sdio.txt <- firmware-nonfree/debian/added-firmware/brcm/brcmfmac43455-sdio.txt
+  brcm/BCM4345C0.hcd <- bluez-firmware/debian/firmware/broadcom/BCM4345C0.hcd
+  LICENCE.cypress <- firmware-nonfree/debian/copyright (License: binary-redist-Cypress)
+sha256:
+51c45e77ddad91a19e96dc8fb75295b2087c279940df2634b23baf71b6dea42c  brcm/BCM4345C0.hcd
+d608f866582519c0a28d86db43040f4f1b98dd1d153e72e9752586546b4a36c3  brcm/brcmfmac43455-sdio.bin
+9823842cae9fb9a5dd1e5fb31f595516ec7deee341354bef30bb3026eee29cc1  brcm/brcmfmac43455-sdio.clm_blob
+ca709be81a78bdb6932936374f39943acbd7af07fae6151011127599a3ce9e3d  brcm/brcmfmac43455-sdio.txt
+7c10c8adaf18bb5b00a7f518fe52213bc70e56bcff1ddbfc991d6968ce530881  LICENCE.cypress

@@ -1,0 +1,48 @@
+// Wi-Fi and Bluetooth firmware for the CYW43455 on Raspberry Pi 5, copied
+// unmodified from the Raspberry Pi firmware packaging by update_firmware.sh.
+// Sources, revisions and checksums are recorded in BUILD_INFO.
+
+package {
+    default_applicable_licenses: ["vendor_rpi_rpi5_firmware_license"],
+}
+
+license {
+    name: "vendor_rpi_rpi5_firmware_license",
+    visibility: [":__subpackages__"],
+    license_kinds: ["legacy_proprietary"],
+    license_text: ["LICENCE.cypress"],
+}
+
+// Installed in /vendor/firmware/brcm: the drivers request brcm/<name> and the
+// vendor init script points the kernel firmware search path at /vendor/firmware.
+prebuilt_firmware {
+    name: "rpi5_brcmfmac43455-sdio.bin",
+    src: "brcm/brcmfmac43455-sdio.bin",
+    filename_from_src: true,
+    sub_dir: "brcm",
+    vendor: true,
+}
+
+prebuilt_firmware {
+    name: "rpi5_brcmfmac43455-sdio.clm_blob",
+    src: "brcm/brcmfmac43455-sdio.clm_blob",
+    filename_from_src: true,
+    sub_dir: "brcm",
+    vendor: true,
+}
+
+prebuilt_firmware {
+    name: "rpi5_brcmfmac43455-sdio.txt",
+    src: "brcm/brcmfmac43455-sdio.txt",
+    filename_from_src: true,
+    sub_dir: "brcm",
+    vendor: true,
+}
+
+prebuilt_firmware {
+    name: "rpi5_BCM4345C0.hcd",
+    src: "brcm/BCM4345C0.hcd",
+    filename_from_src: true,
+    sub_dir: "brcm",
+    vendor: true,
+}
