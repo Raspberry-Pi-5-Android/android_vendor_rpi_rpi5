@@ -9,7 +9,6 @@ initramfs ramdisk.img followkernel
 arm_64bit=1
 enable_uart=1
 uart_250mhz=1
-dtoverlay=android-sdcard
 
 # Graphics & Display
 dtoverlay=vc4-kms-v3d
